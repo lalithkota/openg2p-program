@@ -8,7 +8,7 @@ _logger = logging.getLogger(__name__)
 
 class TestEntitlementRegInfo(TransactionCase):
     def setUp(self):
-        super(TestEntitlementRegInfo, self).setUp()
+        super().setUp()
         self.program = self.env["g2p.program"].create({"name": "Test Program"})
         self.partner = self.env["res.partner"].create({"name": "Test Partner"})
         self.g2p_program_membership = self.env["g2p.program_membership"].create(

@@ -6,7 +6,7 @@ from odoo.addons.g2p_programs.models import constants
 
 class TestDefaultProgramManager(common.TransactionCase):
     def setUp(self):
-        super(TestDefaultProgramManager, self).setUp()
+        super().setUp()
 
         self.program = self.env["g2p.program"].create({"name": "Test Program"})
         self.manager = self.program.get_manager(constants.MANAGER_PROGRAM)

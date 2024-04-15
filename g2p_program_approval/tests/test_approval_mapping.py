@@ -5,7 +5,7 @@ from odoo.tests.common import TransactionCase
 
 class TestProgramApprovalMapping(TransactionCase):
     def setUp(self):
-        super(TestProgramApprovalMapping, self).setUp()
+        super().setUp()
         # Create necessary records (approval groups, mappings with different states)
         group_manager = self.env["res.groups"].create({"name": "Program Manager"})
         group_reviewer = self.env["res.groups"].create({"name": "Program Reviewer"})

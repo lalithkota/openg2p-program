@@ -5,7 +5,7 @@ from odoo.tests.common import TransactionCase
 
 class TestDefaultEntitlementManagerRegInfo(TransactionCase):
     def setUp(self):
-        super(TestDefaultEntitlementManagerRegInfo, self).setUp()
+        super().setUp()
         self.program = self.env["g2p.program"].create({"name": "Test Program"})
         self.partner = self.env["res.partner"].create({"name": "Test Partner"})
         self.g2p_program_membership = self.env["g2p.program_membership"].create(
@@ -52,7 +52,7 @@ class TestDefaultEntitlementManagerRegInfo(TransactionCase):
         RegistrantInfo = self.env["g2p.program.registrant_info"]
 
         # Create test data
-        entitlements = entitlement = self.env["g2p.entitlement"].create(
+        entitlements = self.env["g2p.entitlement"].create(
             {
                 "name": "Test Entitlement",
                 "partner_id": self.partner.id,

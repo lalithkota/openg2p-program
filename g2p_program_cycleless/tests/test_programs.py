@@ -26,7 +26,7 @@ class TestG2PPrograms(common.TransactionCase):
                 "state": "approved",
             }
         )
-        cycle2 = self.cycle_based_program.cycle_ids.create(
+        self.cycle_based_program.cycle_ids.create(
             {
                 "name": "Test Cycle2",
                 "program_id": self.cycle_based_program.id,
@@ -54,8 +54,16 @@ class TestG2PPrograms(common.TransactionCase):
 
     # def test_show_cycleless_fields_cycleless_active_with_payment_manager(self):
     #     # Assign a payment manager to the cycleless program
-    #     self.cycleless_program.write({"manager_id": self.env["g2p.program.payment.manager.phee"].create({ "program_id": self.program.id,
-    #             "name": "Manager",}).id})
+    #     self.cycleless_program.write(
+    #         {
+    #             "manager_id": self.env["g2p.program.payment.manager.phee"].create(
+    #                 {
+    #                     "program_id": self.program.id,
+    #                     "name": "Manager",
+    #                 }
+    #             ).id
+    #         }
+    #     )
 
     #     # Assert that cycleless payment buttons are displayed
     #     self.assertTrue(self.cycleless_program.show_prepare_payments_button)
@@ -78,7 +86,9 @@ class TestG2PPrograms(common.TransactionCase):
     #             "end_date": datetime.now() + timedelta(days=30),})
 
     #     # Call open_entitlements_form and assert that it calls the correct method on the cycle
-    #     with mock.patch("odoo.addons.g2p_program_cycleless.models.programs.G2PPrograms.open_entitlements_form") as mock_open_entitlements:
+    #     with mock.patch(
+    #         "odoo.addons.g2p_program_cycleless.models.programs.G2PPrograms.open_entitlements_form"
+    #     ) as mock_open_entitlements:
     #         self.cycle_based_program.open_entitlements_form()
     #         mock_open_entitlements.assert_called_once()
 

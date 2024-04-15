@@ -36,7 +36,7 @@ class TestProgramFundManagement(TransactionCase):
         # Test post_fund method when fund is in draft state
         self.program_fund.state = "draft"
         self.program_fund.name = "Draft"
-        result = self.program_fund.post_fund()
+        self.program_fund.post_fund()
         # Assert the state is updated to 'posted'
         self.assertEqual(self.program_fund.state, "posted")
         # Assert the name is updated if it was 'Draft' or None
@@ -53,22 +53,22 @@ class TestProgramFundManagement(TransactionCase):
         # Test cancel_fund method
         # Test when fund is in draft state
         self.program_fund.state = "draft"
-        result = self.program_fund.cancel_fund()
+        self.program_fund.cancel_fund()
         # Assert the result is as expected
 
         # Test when fund is not in draft state
         self.program_fund.state = "posted"
-        result = self.program_fund.cancel_fund()
+        self.program_fund.cancel_fund()
         # Assert the result is as expected
 
     def test_reset_draft(self):
         # Test reset_draft method
         # Test when fund is in cancelled state
         self.program_fund.state = "cancelled"
-        result = self.program_fund.reset_draft()
+        self.program_fund.reset_draft()
         # Assert the result is as expected
 
         # Test when fund is not in cancelled state
         self.program_fund.state = "posted"
-        result = self.program_fund.reset_draft()
+        self.program_fund.reset_draft()
         # Assert the result is as expected

@@ -11,7 +11,7 @@ class TestG2PProgramMembership(TransactionCase):
         )
 
     def test_compute_latest_registrant_info(self):
-        reg_info_1 = self.env["g2p.program.registrant_info"].create(
+        self.env["g2p.program.registrant_info"].create(
             {"registrant_id": self.partner.id, "program_id": self.program.id}
         )
         reg_info_2 = self.env["g2p.program.registrant_info"].create(

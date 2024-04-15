@@ -4,7 +4,7 @@ from odoo.tests import TransactionCase
 
 class TestDefaultEligibilityManager(TransactionCase):
     def setUp(self):
-        super(TestDefaultEligibilityManager, self).setUp()
+        super().setUp()
 
         # Create program and partner (assuming these exist)
         self.program = self.env["g2p.program"].create({"name": "Test Program"})

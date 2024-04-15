@@ -8,7 +8,7 @@ from odoo.addons.g2p_programs.models import constants
 
 class TestG2PApprovalEntitlement(common.TransactionCase):
     def setUp(self):
-        super(TestG2PApprovalEntitlement, self).setUp()
+        super().setUp()
         self.entitlement_model = self.env["g2p.entitlement"]
         self.program_model = self.env["g2p.program"]
         self.partner_model = self.env["res.partner"]
