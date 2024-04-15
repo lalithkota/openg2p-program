@@ -32,6 +32,7 @@ class TestG2PDocumentStore(TransactionCase):
             data=b"Some test data",
             name="Test File",
             extension="txt",
+            program_membership=self.g2p_program_membership.id,
         )
         # Assert that the program_membership_id is set
         self.assertEqual(file.program_membership_id, self.g2p_program_membership)
